@@ -16,15 +16,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         todoAdapter = TodoAdapter(mutableListOf())
 
-        val rvTodoItems = findViewById<RecyclerView>(R.id.rvTodoItems)
+        val rvTodoItems = findViewById<RecyclerView>(R.id.TodoItems)
         rvTodoItems.adapter = todoAdapter
         rvTodoItems.layoutManager = LinearLayoutManager(this)
 
-        val btnAddTodo = findViewById<Button>(R.id.btnAddTodo)
-        val etTodoTitle = findViewById<EditText>(R.id.etTodoTitle)
+        val btnAddTodo = findViewById<Button>(R.id.AddTodo)
+        val etTodoTitle = findViewById<EditText>(R.id.TodoTitle)
         val btnDeleteDoneTodos = findViewById<Button>(R.id.btnDeleteDoneTodos)
 
         btnAddTodo.setOnClickListener {
+
             val todoTitle = etTodoTitle.text.toString()
             if (todoTitle.isNotEmpty()) {
                 val todo = Todo(todoTitle)
